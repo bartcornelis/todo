@@ -1,0 +1,15 @@
+Create {{ form(form) }}
+<ul>
+    {% for entry in entries %}
+
+        <li> {{ entry['item'].getId() }} ) {{ entry['item'].getTodo() }}
+
+            {{ form_start(entry['delete'], {attr: {class: 'my-form-class'} }) }}
+            {{ form_widget(entry['delete']) }}
+            {{ form_end(form) }}
+        </li>
+
+    {% else %}
+        geen todo items.
+    {% endfor %}
+</ul>
